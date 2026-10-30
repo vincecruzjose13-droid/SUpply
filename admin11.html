@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SupplyTrack | Seller</title>
+    <link rel="stylesheet" href="style11.css">
+    <script src="products11.js" defer></script>
+    <script src="shared11.js" defer></script>
+    <script src="admin11.js" defer></script>
+</head>
+<body>
+    <div class="topmostnav">
+        <a class="logoall" href="index11.html"><img class="brand-logo-img" src="logo11.svg" alt="SupplyTrack logo"><div class="logo-text">SupplyTrack · Seller</div></a>
+        <div class="nav-links"><a href="index11.html">Student site</a></div>
+    </div>
+    <div class="page">
+        <p class="catalogheadsmall">SHOP VIEW</p>
+        <h2 class="catalogheadbig">Seller dashboard</h2>
+        <section class="notice" style="margin:0 0 8px"><b>DEMO:</b> Open <a href="index11.html" target="_blank">the student page</a> in another window beside this one. Send a request there and it appears here by itself. Change a status here and the student's receipt updates by itself.<br><b>LIMIT:</b> this works between windows of the SAME browser. Real multi-device needs a server.</section>
+        <p class="tiny" id="sync-note"></p>
+        <div class="stats">
+            <div class="stat"><span>Pending</span><strong id="pending-count">0</strong></div>
+            <div class="stat"><span>Confirmed / Preparing</span><strong id="active-count">0</strong></div>
+            <div class="stat"><span>Ready for pickup</span><strong id="ready-count">0</strong></div>
+        </div>
+        <div class="inline-form">
+            <input id="req-search" placeholder="Search code, name or student ID" aria-label="Search requests">
+            <select id="filter" class="catalogdropdown" aria-label="Filter by status"></select>
+            <button class="btn danger" id="clear-btn" type="button">Delete ALL test data</button>
+        </div>
+        <div id="reservations-list" class="reservation-list"></div>
+
+        <h3>Products</h3>
+        <form id="add-form" class="inline-form">
+            <input id="new-name" placeholder="Product name" aria-label="Product name">
+            <input id="new-category" list="cats" placeholder="Category" aria-label="Category">
+            <datalist id="cats"></datalist>
+            <input id="new-price" type="number" min="0.01" step="0.01" placeholder="Price" aria-label="Price">
+            <label class="mini">Max per student <input id="new-max" type="number" min="1" max="50" value="10"></label>
+            <select id="new-avail" class="catalogdropdown" aria-label="Availability"><option>Available</option><option>Limited</option><option>Unavailable</option></select>
+            <button class="btn" type="submit">Add product</button>
+        </form>
+        <small class="err" id="add-err"></small>
+        <div id="product-list"></div>
+    </div>
+    <footer class="footer"><h1>SupplyTrack</h1><p>Seller area</p></footer>
+</body>
+</html>
